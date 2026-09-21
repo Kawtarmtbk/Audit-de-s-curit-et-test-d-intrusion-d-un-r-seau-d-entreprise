@@ -1,0 +1,4 @@
+# Nmap 7.99 scan initiated Fri Sep 11 07:13:30 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -A -p 135,139,445,3389,9182 -oA /home/kali/lab-pentest/nmap_replay 192.168.145.20
+Host: 192.168.145.20 ()	Status: Up
+Host: 192.168.145.20 ()	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Windows 10 Education 19045 microsoft-ds (workgroup: MYLAB)/, 3389/closed/tcp//ms-wbt-server///, 9182/open/tcp//http//Prometheus exporter Windows Exporter 0.25.1/	OS: Microsoft Windows 10 1903 - 22H2	Seq Index: 253	IP ID Seq: Incremental
+# Nmap done at Fri Sep 11 07:13:56 2026 -- 1 IP address (1 host up) scanned in 26.40 seconds

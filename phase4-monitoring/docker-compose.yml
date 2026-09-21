@@ -1,0 +1,57 @@
+version: '3.8'
+
+networks:
+  lab-network:
+     driver: bridge
+
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa_target
+    ports:
+      - "8080:80"
+    networks:
+      - lab-network
+    restart: always
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8081:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - lab-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+       - "9090:9090"
+    volumes:
+       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+       - prometheus_data:/prometheus
+    networks:
+       - lab-network
+
+  grafana:
+     image: grafana/grafana:latest
+     container_name: grafana
+     restart: unless-stopped
+     ports:
+        - "3000:3000"
+     environment:
+        - GF_SECURITY_ADMIN_PASSWORD=admin
+     volumes:
+        - grafana_data:/var/lib/grafana
+     networks:
+        - lab-network
+
+volumes:
+      prometheus_data:
+      grafana_data:

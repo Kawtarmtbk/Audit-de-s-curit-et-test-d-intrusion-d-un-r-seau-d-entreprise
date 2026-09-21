@@ -1,0 +1,22 @@
+*.pyc
+__pycache__/
+.DS_Store
+.vscode/
+
+
+# Payloads et outils offensifs
+shell.php
+win_shell.exe
+winPEASx64.exe
+linpeas.sh
+
+# Ticket Kerberos (TRÈS SENSIBLE)
+Administrator.ccache
+*.ccache
+
+# Loot et données exfiltrées
+loot/
+nohup.out
+
+# Fichiers BloodHound bruts à la racine (déjà copiés dans bloodhound/)
+20260908203427_*.json

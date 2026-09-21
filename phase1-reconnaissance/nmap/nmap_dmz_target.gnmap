@@ -1,0 +1,4 @@
+# Nmap 7.99 scan initiated Thu Sep  3 17:37:55 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 8080,21,22,80,445 -Pn -oA nmap_dmz_target 192.168.50.128
+Host: 192.168.50.128 (192.168.50.128)	Status: Up
+Host: 192.168.50.128 (192.168.50.128)	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 445/filtered/tcp//microsoft-ds///, 8080/open/tcp//http//Apache httpd 2.4.25 ((Debian))/
+# Nmap done at Thu Sep  3 17:38:07 2026 -- 1 IP address (1 host up) scanned in 12.76 seconds

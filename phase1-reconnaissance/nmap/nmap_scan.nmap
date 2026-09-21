@@ -1,0 +1,7 @@
+# Nmap 7.99 scan initiated Tue Aug 18 18:24:34 2026 as: /usr/lib/nmap/nmap -sS -p- --min-rate 5000 -oA /home/kawtar/pentest-lab/nmap_scan 192.168.50.128
+Nmap scan report for 192.168.50.128
+Host is up (0.023s latency).
+All 65535 scanned ports on 192.168.50.128 are in ignored states.
+Not shown: 65535 filtered tcp ports (no-response)
+
+# Nmap done at Tue Aug 18 18:25:01 2026 -- 1 IP address (1 host up) scanned in 27.44 seconds

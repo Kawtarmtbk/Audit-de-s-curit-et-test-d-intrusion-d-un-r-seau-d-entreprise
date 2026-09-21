@@ -1,0 +1,4 @@
+# Nmap 7.99 scan initiated Wed Aug 19 01:14:25 2026 as: /usr/lib/nmap/nmap -Pn -sV -p 8080 -oA /home/kawtar/pentest-lab/nmap_dvwa_8080 192.168.50.128
+Host: 192.168.50.128 ()	Status: Up
+Host: 192.168.50.128 ()	Ports: 8080/open/tcp//http//Apache httpd 2.4.25 ((Debian))/
+# Nmap done at Wed Aug 19 01:14:33 2026 -- 1 IP address (1 host up) scanned in 7.57 seconds

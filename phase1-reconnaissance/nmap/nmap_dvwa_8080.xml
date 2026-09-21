@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Wed Aug 19 01:14:25 2026 as: /usr/lib/nmap/nmap -Pn -sV -p 8080 -oA /home/kawtar/pentest-lab/nmap_dvwa_8080 192.168.50.128 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -Pn -sV -p 8080 -oA /home/kawtar/pentest-lab/nmap_dvwa_8080 192.168.50.128" start="1787098465" startstr="Wed Aug 19 01:14:25 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="8080"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1787098466" endtime="1787098473"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.50.128" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="8080"><state state="open" reason="syn-ack" reason_ttl="62"/><service name="http" product="Apache httpd" version="2.4.25" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.25</cpe></service></port>
+</ports>
+<times srtt="3217" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1787098473" timestr="Wed Aug 19 01:14:33 2026" summary="Nmap done at Wed Aug 19 01:14:33 2026; 1 IP address (1 host up) scanned in 7.57 seconds" elapsed="7.57" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
