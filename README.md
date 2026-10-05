@@ -44,11 +44,11 @@ corrélation en temps réel entre outils offensifs et impact système via Promet
 
 | KPI | Baseline | Max attaque | Delta |
 |---|---|---|---|
-| CPU Kali (attaquante) | 5.9% | 99.6% | +93.7 pts |
-| CPU Windows 10 (cible) | 11.2% | 100% | +88.8 pts |
-| Débit réseau Kali | 11.7 B/s | 600 kB/s | ×51 282 |
+| CPU Kali (attaquante) | 5.9% | 85% | +93.7 pts |
+| CPU Windows 10 (cible) | 11.2% | 13.4% | +88.8 pts |
+| Débit réseau Kali | 63.5 kb/s | 600 kB/s | ×51 282 |
 | Score CVSS moyen | — | 8.9/10 | — |
-| Taux d'exploitation | — | 100% | 3/3 CVE |
+| Taux d'exploitation | — | 60% | (3/5) CVE |
 
 ## 🧰 Stack technique
 
