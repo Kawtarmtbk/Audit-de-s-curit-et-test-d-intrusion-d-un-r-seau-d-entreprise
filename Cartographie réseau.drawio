@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Topologie Lab Pentest avec Chemins d&#39;Attaque" id="qSTfEdfuH0eCtkTGUCcH">
+    <mxGraphModel dx="1312" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-1" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Zone WAN (Attaquant / Externe)" vertex="1">
+          <mxGeometry height="200" width="240" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-2" parent="7zhXwxPQp1EIFerzSA4G-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Kali Linux&#xa;IP: 192.168.10.50&#xa;(Machine Attaquante)" vertex="1">
+          <mxGeometry height="80" width="180" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" value="Pare-feu pfSense&#xa;WAN: 192.168.10.1&#xa;DMZ: 192.168.50.1&#xa;LAN: 192.168.145.1" vertex="1">
+          <mxGeometry height="100" width="160" x="360" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-4" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Zone DMZ (Services &amp; Monitoring)" vertex="1">
+          <mxGeometry height="300" width="280" x="580" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-5" parent="7zhXwxPQp1EIFerzSA4G-4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Hôte Docker&#xa;IP: 192.168.50.128" vertex="1">
+          <mxGeometry height="220" width="220" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-6" parent="7zhXwxPQp1EIFerzSA4G-5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="DVWA (Web)&#xa;Port: 8080" vertex="1">
+          <mxGeometry height="40" width="180" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-7" parent="7zhXwxPQp1EIFerzSA4G-5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Prometheus (:9090) / Grafana (:3000)&#xa;cAdvisor (:8081)" vertex="1">
+          <mxGeometry height="50" width="180" x="20" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-8" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e2d5f8;strokeColor=#9673a6;" value="Zone LAN Interne (Active Directory)" vertex="1">
+          <mxGeometry height="320" width="280" x="580" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-9" parent="7zhXwxPQp1EIFerzSA4G-8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Contrôleur de Domaine (DC)&#xa;Windows Server 2019 - mylab.local&#xa;IP: 192.168.145.10&#xa;Ports: Kerberos :88, LDAP :389,&#xa;SMB :445, RDP :3389" vertex="1">
+          <mxGeometry height="100" width="220" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-10" parent="7zhXwxPQp1EIFerzSA4G-8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Poste Client Windows 10&#xa;IP: 192.168.145.20&#xa;(Joint au domaine)" vertex="1">
+          <mxGeometry height="80" width="220" x="30" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-11" edge="1" parent="1" source="7zhXwxPQp1EIFerzSA4G-2" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="7zhXwxPQp1EIFerzSA4G-3" value="WAN / TCP 8080">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-12" edge="1" parent="1" source="7zhXwxPQp1EIFerzSA4G-3" style="endArrow=classic;html=1;exitX=1;exitY=0.3;entryX=0;entryY=0.5;" target="7zhXwxPQp1EIFerzSA4G-4" value="DMZ (OPT1)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-13" edge="1" parent="1" source="7zhXwxPQp1EIFerzSA4G-3" style="endArrow=classic;html=1;exitX=1;exitY=0.7;entryX=0;entryY=0.2;" target="7zhXwxPQp1EIFerzSA4G-8" value="LAN (192.168.145.1)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-14" edge="1" parent="1" source="7zhXwxPQp1EIFerzSA4G-2" style="endArrow=classic;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;exitX=1;exitY=0.8;entryX=0;entryY=0.2;fontColor=#FF0000;fontStyle=1" target="7zhXwxPQp1EIFerzSA4G-5" value="① Docker misconfig → root">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-15" edge="1" parent="1" source="7zhXwxPQp1EIFerzSA4G-2" style="endArrow=classic;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;exitX=0.5;exitY=1;entryX=0;entryY=0.5;fontColor=#FF0000;fontStyle=1" target="7zhXwxPQp1EIFerzSA4G-10" value="② LOLBin delivery → SYSTEM">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7zhXwxPQp1EIFerzSA4G-16" edge="1" parent="1" source="7zhXwxPQp1EIFerzSA4G-10" style="endArrow=classic;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;fontColor=#FF0000;fontStyle=1" target="7zhXwxPQp1EIFerzSA4G-9" value="③ PtH → DCSync → Golden Ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
